@@ -1,7 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
 *{
     background: tomato;
     position: center;
+    font-family: 'Raleway', sans-serif;
+    
+    
 }
+
+
 
 .mesa {
 
