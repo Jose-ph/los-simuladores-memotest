@@ -1,3 +1,42 @@
+
+const cards = document.querySelectorAll('.memory-card');
+
+cards.forEach(card => card.addEventListener("click" , flipCard));
+
+
+
+function flipCard(){
+
+
+    this.classList.toggle('flip');
+    
+    //console.log("me tocaron");
+    console.log(this);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // document.addEventListener('DOMContentLoaded', ()=>{
 
 //     //SOUNDTRACK JUEGO LOS SIMULADORES OST SUSPENSO//
@@ -210,3 +249,5 @@
 
 
 // });
+
+
