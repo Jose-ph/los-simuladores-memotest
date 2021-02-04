@@ -1,17 +1,78 @@
 
 const cards = document.querySelectorAll('.memory-card');
 
+let hasflip = false;
+
+let firstCard;
+let secondCard;
+
+
+
+
+
+
+
+
+
+
+
+
 cards.forEach(card => card.addEventListener("click" , flipCard));
 
 
 
-function flipCard(){
+function flipCard(){  // this es el elemento que genera el evento (?) algo asi
 
 
-    this.classList.toggle('flip');
+    //this.classList.toggle('flip'); Esto lo convierte en add
+
+    this.classList.add('flip');
+
+
+    if(!hasflip){  //primer click
+
+        firstCard = this ;
+
+        hasflip = true;
+
+       // console.log( hasflip , firstCard);
+   
+    } else{
+
+        hasflip = false;
+        secondCard = this;
+
+
+        //console.log( firstCard , secondCard);    
+
+        //console.log(firstCard.dataset.character);
+        //console.log(secondCard.dataset.character);
+
+        if(firstCard.dataset.character === secondCard.dataset.character){
+
+            firstCard.removeEventListener('click',flipCard);
+            secondCard.removeEventListener('click', flipCard);
+        } else{
+
+            setTimeout(()=>{
+
+            firstCard.classList.remove('flip');
+            secondCard.classList.remove('flip');
+        }
+            ,500)
+
+
+
+ 
+    }
+  
+
+   
     
     //console.log("me tocaron");
-    console.log(this);
+
+
+    
 
 }
 
@@ -250,4 +311,4 @@ function flipCard(){
 
 // });
 
-
+}
